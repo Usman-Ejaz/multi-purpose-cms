@@ -1,3 +1,11 @@
+<script setup>
+import { onMounted } from 'vue';
+
+onMounted(() => {
+    $('#side-menu').metisMenu();
+})
+</script>
+
 <template>
     <div data-simplebar="init" class="h-100">
         <div class="simplebar-wrapper" style="margin: 0px;">
@@ -14,8 +22,14 @@
                                 <!-- Left Menu Start -->
                                 <ul class="metismenu list-unstyled mm-show" id="side-menu">
                                     <li class="menu-title" key="t-menu">Menu</li>
-
                                     <li>
+                                        <Link :href="route('dashboard')" class="waves-effect">
+                                            <i class="bx bx-home-circle"></i>
+                                            <span key="t-chat">Dashboard</span>
+                                        </Link>
+                                    </li>
+
+                                    <!-- <li>
                                         <a href="javascript: void(0);" class="has-arrow waves-effect" aria-expanded="false">
                                             <i class="bx bx-home-circle"></i>
                                             <span key="t-dashboards">Dashboards</span>
@@ -29,7 +43,7 @@
                                                         class="badge rounded-pill text-bg-success float-end"
                                                         key="t-new">New</span> <span key="t-jobs">Jobs</span></a></li>
                                         </ul>
-                                    </li>
+                                    </li> -->
 
                                     <li>
                                         <a href="javascript: void(0);" class="has-arrow waves-effect">
@@ -340,104 +354,6 @@
                                             <li><a href="ui-utilities.html"><span key="t-utilities">Utilities</span> <span
                                                         class="badge rounded-pill bg-success float-end"
                                                         key="t-new">New</span></a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript: void(0);" class="waves-effect">
-                                            <i class="bx bxs-eraser"></i>
-                                            <span class="badge rounded-pill bg-danger float-end">10</span>
-                                            <span key="t-forms">Forms</span>
-                                        </a>
-                                        <ul class="sub-menu mm-collapse" aria-expanded="false">
-                                            <li><a href="form-elements.html" key="t-form-elements">Form Elements</a></li>
-                                            <li><a href="form-layouts.html" key="t-form-layouts">Form Layouts</a></li>
-                                            <li><a href="form-validation.html" key="t-form-validation">Form Validation</a>
-                                            </li>
-                                            <li><a href="form-advanced.html" key="t-form-advanced">Form Advanced</a></li>
-                                            <li><a href="form-editors.html" key="t-form-editors">Form Editors</a></li>
-                                            <li><a href="form-uploads.html" key="t-form-upload">Form File Upload</a></li>
-                                            <li><a href="form-xeditable.html" key="t-form-xeditable">Form Xeditable</a></li>
-                                            <li><a href="form-repeater.html" key="t-form-repeater">Form Repeater</a></li>
-                                            <li><a href="form-wizard.html" key="t-form-wizard">Form Wizard</a></li>
-                                            <li><a href="form-mask.html" key="t-form-mask">Form Mask</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                            <i class="bx bx-list-ul"></i>
-                                            <span key="t-tables">Tables</span>
-                                        </a>
-                                        <ul class="sub-menu mm-collapse" aria-expanded="false">
-                                            <li><a href="tables-basic.html" key="t-basic-tables">Basic Tables</a></li>
-                                            <li><a href="tables-datatable.html" key="t-data-tables">Data Tables</a></li>
-                                            <li><a href="tables-responsive.html" key="t-responsive-table">Responsive
-                                                    Table</a></li>
-                                            <li><a href="tables-editable.html" key="t-editable-table">Editable Table</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                            <i class="bx bxs-bar-chart-alt-2"></i>
-                                            <span key="t-charts">Charts</span>
-                                        </a>
-                                        <ul class="sub-menu mm-collapse" aria-expanded="false">
-                                            <li><a href="charts-apex.html" key="t-apex-charts">Apex Charts</a></li>
-                                            <li><a href="charts-echart.html" key="t-e-charts">E Charts</a></li>
-                                            <li><a href="charts-chartjs.html" key="t-chartjs-charts">Chartjs Charts</a></li>
-                                            <li><a href="charts-flot.html" key="t-flot-charts">Flot Charts</a></li>
-                                            <li><a href="charts-tui.html" key="t-ui-charts">Toast UI Charts</a></li>
-                                            <li><a href="charts-knob.html" key="t-knob-charts">Jquery Knob Charts</a></li>
-                                            <li><a href="charts-sparkline.html" key="t-sparkline-charts">Sparkline
-                                                    Charts</a>
-                                            </li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                            <i class="bx bx-aperture"></i>
-                                            <span key="t-icons">Icons</span>
-                                        </a>
-                                        <ul class="sub-menu mm-collapse" aria-expanded="false">
-                                            <li><a href="icons-boxicons.html" key="t-boxicons">Boxicons</a></li>
-                                            <li><a href="icons-materialdesign.html" key="t-material-design">Material
-                                                    Design</a></li>
-                                            <li><a href="icons-dripicons.html" key="t-dripicons">Dripicons</a></li>
-                                            <li><a href="icons-fontawesome.html" key="t-font-awesome">Font Awesome</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                            <i class="bx bx-map"></i>
-                                            <span key="t-maps">Maps</span>
-                                        </a>
-                                        <ul class="sub-menu mm-collapse" aria-expanded="false">
-                                            <li><a href="maps-google.html" key="t-g-maps">Google Maps</a></li>
-                                            <li><a href="maps-vector.html" key="t-v-maps">Vector Maps</a></li>
-                                            <li><a href="maps-leaflet.html" key="t-l-maps">Leaflet Maps</a></li>
-                                        </ul>
-                                    </li>
-
-                                    <li>
-                                        <a href="javascript: void(0);" class="has-arrow waves-effect">
-                                            <i class="bx bx-share-alt"></i>
-                                            <span key="t-multi-level">Multi Level</span>
-                                        </a>
-                                        <ul class="sub-menu mm-collapse" aria-expanded="true">
-                                            <li><a href="javascript: void(0);" key="t-level-1-1">Level 1.1</a></li>
-                                            <li>
-                                                <a href="javascript: void(0);" class="has-arrow" key="t-level-1-2">Level
-                                                    1.2</a>
-                                                <ul class="sub-menu mm-collapse" aria-expanded="true">
-                                                    <li><a href="javascript: void(0);" key="t-level-2-1">Level 2.1</a></li>
-                                                    <li><a href="javascript: void(0);" key="t-level-2-2">Level 2.2</a></li>
-                                                </ul>
-                                            </li>
                                         </ul>
                                     </li>
 

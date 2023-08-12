@@ -1,3 +1,15 @@
+<script setup>
+import { onMounted } from 'vue';
+
+
+onMounted(() => {
+    $("#vertical-menu-btn").on("click", function(e) {
+        e.preventDefault(),
+        $("body").toggleClass("sidebar-enable vertical-collpsed")
+    });
+})
+</script>
+
 <template>
     <div class="navbar-header">
         <div class="d-flex">
