@@ -1,10 +1,8 @@
 <script setup>
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import { Link } from '@inertiajs/vue3';
 </script>
 
 <template>
-    <div class="account-pages my-4 pt-sm-5">
+    <div class="account-pages pt-sm-5">
         <div class="container">
             <div class="row justify-content-center">
                 <slot />

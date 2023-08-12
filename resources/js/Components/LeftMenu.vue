@@ -28,6 +28,12 @@ onMounted(() => {
                                             <span key="t-chat">Dashboard</span>
                                         </Link>
                                     </li>
+                                    <li>
+                                        <Link :href="route('parties.index')" class="waves-effect">
+                                            <i class="bx bxs-user-detail"></i>
+                                            <span key="t-chat">Parties</span>
+                                        </Link>
+                                    </li>
 
                                     <!-- <li>
                                         <a href="javascript: void(0);" class="has-arrow waves-effect" aria-expanded="false">
