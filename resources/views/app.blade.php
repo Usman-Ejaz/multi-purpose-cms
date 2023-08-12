@@ -21,7 +21,7 @@
         @vite(['resources/js/app.js', "resources/js/Pages/{$page['component']}.vue"])
         @inertiaHead
     </head>
-    <body class="font-sans antialiased">
+    <body class="font-sans antialiased" data-sidebar="dark" data-layout-mode="light">
         @inertia
 
         <script src="{{ asset('assets/libs/jquery/jquery.min.js') }}"></script>
@@ -30,6 +30,6 @@
         <script src="{{ asset('assets/libs/simplebar/simplebar.min.js') }}"></script>
         <script src="{{ asset('assets/libs/node-waves/waves.min.js') }}"></script>
 
-        <script src="{{ asset('assets/js/app.js') }}"></script>
+        <script src="{{ asset('assets/js/custom.js') }}"></script>
     </body>
 </html>
