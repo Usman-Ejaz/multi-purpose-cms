@@ -1,7 +1,6 @@
 <script setup>
 import { onMounted } from 'vue';
 
-
 onMounted(() => {
     $("#vertical-menu-btn").on("click", function(e) {
         e.preventDefault(),
@@ -827,16 +826,14 @@ onMounted(() => {
                         src="assets/images/users/avatar-1.jpg"
                         alt="Header Avatar"
                     />
-                    <span class="d-none d-xl-inline-block ms-1" key="t-henry"
-                        >Henry</span
-                    >
-                    <i
-                        class="mdi mdi-chevron-down d-none d-xl-inline-block"
-                    ></i>
+                    <span class="d-none d-xl-inline-block ms-1" key="t-henry">
+                        {{ $page.props.auth.user.name }}
+                    </span>
+                    <i class="mdi mdi-chevron-down d-none d-xl-inline-block"></i>
                 </button>
                 <div class="dropdown-menu dropdown-menu-end">
                     <!-- item-->
-                    <a class="dropdown-item" href="#">
+                    <!-- <a class="dropdown-item" href="#">
                         <i
                             class="bx bx-user font-size-16 align-middle me-1"
                         ></i>
@@ -860,8 +857,8 @@ onMounted(() => {
                             class="bx bx-lock-open font-size-16 align-middle me-1"
                         ></i>
                         <span key="t-lock-screen">Lock screen</span>
-                    </a>
-                    <div class="dropdown-divider"></div>
+                    </a> -->
+                    <!-- <div class="dropdown-divider"></div> -->
                     <Link
                         class="dropdown-item text-danger"
                         :href="route('logout')"

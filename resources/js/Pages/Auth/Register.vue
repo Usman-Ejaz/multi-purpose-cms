@@ -20,6 +20,12 @@ const submit = () => {
 };
 </script>
 
+<script>
+export default {
+    layout: GuestLayout
+}
+</script>
+
 <template>
     <GuestLayout>
         <Head title="Register" />

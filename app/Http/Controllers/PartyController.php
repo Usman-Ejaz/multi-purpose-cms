@@ -4,15 +4,16 @@ namespace App\Http\Controllers;
 
 use App\Models\Party;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class PartyController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        $parties = [];//Party::all()->paginate(10);
+        $parties = Party::filter($request)->select('name', 'phone_number', 'email', 'slug')->paginate(10);
         return inertia('Party/Index', compact('parties'));
     }
 
