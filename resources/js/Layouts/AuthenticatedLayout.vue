@@ -1,19 +1,14 @@
 <script setup>
-import { ref } from 'vue';
-import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import Dropdown from '@/Components/Dropdown.vue';
-import DropdownLink from '@/Components/DropdownLink.vue';
-import NavLink from '@/Components/NavLink.vue';
-import ResponsiveNavLink from '@/Components/ResponsiveNavLink.vue';
 import LeftMenu from '@/Components/LeftMenu.vue';
 import Header from '@/Components/Header.vue';
-import { Link } from '@inertiajs/vue3';
 
-const showingNavigationDropdown = ref(false);
 </script>
 
 <template>
     
+    <Head>
+        <title> {{ $page.props?.title ?? 'Dashboard' }} </title>
+    </Head>
 
     <div id="layout-wrapper">
         <!-- main header -->
@@ -34,7 +29,7 @@ const showingNavigationDropdown = ref(false);
                         <div class="col-12">
                             <div class="page-title-box d-sm-flex align-items-center justify-content-between">
                                 <h4 class="mb-sm-0 font-size-18">
-                                    {{ $page.props.auth.user.name }}
+                                    {{ $page.props?.title ?? '' }}
                                 </h4>
                                 <!-- Breadcrumbs -->
                                 <div class="page-title-right">

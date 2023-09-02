@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePartyRequest;
 use App\Models\Party;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
+use Inertia\Inertia;
 
 class PartyController extends Controller
 {
@@ -14,6 +15,10 @@ class PartyController extends Controller
     public function index(Request $request)
     {
         $parties = Party::filter($request)->select('name', 'phone_number', 'email', 'slug')->paginate(10);
+        
+        Inertia::share('title', 'Parties List');
+        Inertia::share('breadcrumbs', $this->getBreadcrumbs());
+
         return inertia('Party/Index', compact('parties'));
     }
 
@@ -28,9 +33,9 @@ class PartyController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(CreatePartyRequest $request)
     {
-        //
+        $data = $request->validated();
     }
 
     /**
@@ -63,5 +68,10 @@ class PartyController extends Controller
     public function destroy(Party $party)
     {
         //
+    }
+
+    private function getBreadcrumbs()
+    {
+
     }
 }

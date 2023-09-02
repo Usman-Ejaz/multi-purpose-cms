@@ -10,11 +10,11 @@ const isEditing = ref(false);
 
 <template>
 
-    <div class="modal fade bs-example-modal-lg" tabindex="-1" aria-labelledby="addEditModal" style="display: none;" aria-hidden="true">
-        <div class="modal-dialog modal-lg">
+    <div class="modal fade bs-example-modal-xl" tabindex="-1" aria-labelledby="addEditModal" aria-hidden="true" v-show="show">
+        <div class="modal-dialog modal-xl">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="addEditModal">Large modal</h5>
+                    <h5 class="modal-title" id="addEditModal">{{ isEditing ? 'Edit' : 'Add' }} Party</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
@@ -39,9 +39,9 @@ const isEditing = ref(false);
             <div class="card">
                 <div class="card-body border-bottom">
                     <div class="d-flex align-items-center">
-                        <h5 class="mb-0 card-title flex-grow-1">Parties List</h5>
+                        <h5 class="mb-0 card-title flex-grow-1"></h5>
                         <div class="flex-shrink-0">
-                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".bs-example-modal-lg">Add New Party</button>
+                            <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target=".bs-example-modal-xl">Add New Party</button>
                             <!-- <a href="#!" class="btn btn-light">
                                 <i class="mdi mdi-refresh"></i>
                             </a>
@@ -89,119 +89,35 @@ const isEditing = ref(false);
                                 placeholder="Search for ..."
                             />
                         </div>
-                        <div class="col-xxl-2 col-lg-6" data-select2-id="8">
-                            <select
-                                class="form-control select2 select2-hidden-accessible"
-                                data-select2-id="1"
-                                tabindex="-1"
-                                aria-hidden="true"
-                            >
-                                <option data-select2-id="3">Status</option>
-                                <option value="Active" data-select2-id="14">
+                        <div class="col-xxl-2 col-lg-6">
+                            <select class="form-control">
+                                <option>Status</option>
+                                <option value="Active">
                                     Active
                                 </option>
-                                <option value="New" data-select2-id="15">
+                                <option value="New">
                                     New
                                 </option>
-                                <option value="Close" data-select2-id="16">
+                                <option value="Close">
                                     Close
                                 </option>
                             </select>
-                            <span
-                                class="select2 select2-container select2-container--default select2-container--below"
-                                dir="ltr"
-                                data-select2-id="2"
-                                style="width: 183.525px"
-                            >
-                                <span class="selection">
-                                    <span
-                                        class="select2-selection select2-selection--single"
-                                        role="combobox"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                        tabindex="0"
-                                        aria-disabled="false"
-                                        aria-labelledby="select2-nx4b-container"
-                                    >
-                                        <span
-                                            class="select2-selection__rendered"
-                                            id="select2-nx4b-container"
-                                            role="textbox"
-                                            aria-readonly="true"
-                                            title="Status"
-                                            >Status</span
-                                        >
-                                        <span
-                                            class="select2-selection__arrow"
-                                            role="presentation"
-                                        >
-                                            <b role="presentation"></b>
-                                        </span>
-                                    </span>
-                                </span>
-                                <span
-                                    class="dropdown-wrapper"
-                                    aria-hidden="true"
-                                ></span>
-                            </span>
                         </div>
-                        <div class="col-xxl-2 col-lg-4" data-select2-id="18">
-                            <select
-                                class="form-control select2 select2-hidden-accessible"
-                                data-select2-id="4"
-                                tabindex="-1"
-                                aria-hidden="true"
-                            >
-                                <option data-select2-id="6">Select Type</option>
-                                <option value="1" data-select2-id="19">
+                        <div class="col-xxl-2 col-lg-4">
+                            <select class="form-control">
+                                <option >Select Type</option>
+                                <option value="1">
                                     Full Time
                                 </option>
-                                <option value="2" data-select2-id="20">
+                                <option value="2">
                                     Part Time
                                 </option>
                             </select>
-                            <span
-                                class="select2 select2-container select2-container--default select2-container--below"
-                                dir="ltr"
-                                data-select2-id="5"
-                                style="width: 183.525px"
-                            >
-                                <span class="selection">
-                                    <span
-                                        class="select2-selection select2-selection--single"
-                                        role="combobox"
-                                        aria-haspopup="true"
-                                        aria-expanded="false"
-                                        tabindex="0"
-                                        aria-disabled="false"
-                                        aria-labelledby="select2-r0tw-container"
-                                    >
-                                        <span
-                                            class="select2-selection__rendered"
-                                            id="select2-r0tw-container"
-                                            role="textbox"
-                                            aria-readonly="true"
-                                            title="Select Type"
-                                            >Select Type</span
-                                        >
-                                        <span
-                                            class="select2-selection__arrow"
-                                            role="presentation"
-                                        >
-                                            <b role="presentation"></b>
-                                        </span>
-                                    </span>
-                                </span>
-                                <span
-                                    class="dropdown-wrapper"
-                                    aria-hidden="true"
-                                ></span>
-                            </span>
                         </div>
                         <div class="col-xxl-2 col-lg-4">
                             <div id="datepicker1">
                                 <input
-                                    type="text"
+                                    type="date"
                                     class="form-control"
                                     placeholder="Select date"
                                     data-date-format="dd M, yyyy"
@@ -210,7 +126,6 @@ const isEditing = ref(false);
                                     data-provide="datepicker"
                                 />
                             </div>
-                            <!-- input-group -->
                         </div>
                         <div class="col-xxl-2 col-lg-4">
                             <button

@@ -5,7 +5,7 @@ import { createApp, defineAsyncComponent, h } from 'vue';
 import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
-import { Link } from '@inertiajs/vue3';
+import { Link, Head } from '@inertiajs/vue3';
 
 const Layout = defineAsyncComponent(() => import('@/Layouts/AuthenticatedLayout.vue'));
 
@@ -33,6 +33,7 @@ createInertiaApp({
         .use(plugin)
         .use(ZiggyVue, Ziggy)
         .component('Link', Link)
+        .component('Head', Head)
         .mount(el);
     },
     progress: {

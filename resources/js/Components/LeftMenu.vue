@@ -21,13 +21,13 @@ onMounted(() => {
                                 <!-- Left Menu Start -->
                                 <ul class="metismenu list-unstyled mm-show" id="side-menu">
                                     <li class="menu-title" key="t-menu">Menu</li>
-                                    <li>
+                                    <li :class="{'mm-active': route().current('dashboard')}">
                                         <Link :href="route('dashboard')" class="waves-effect">
                                             <i class="bx bx-home-circle"></i>
                                             <span key="t-chat">Dashboard</span>
                                         </Link>
                                     </li>
-                                    <li>
+                                    <li :class="{'mm-active': route().current('parties.index')}">
                                         <Link :href="route('parties.index')" class="waves-effect">
                                             <i class="bx bxs-user-detail"></i>
                                             <span key="t-chat">Parties</span>
