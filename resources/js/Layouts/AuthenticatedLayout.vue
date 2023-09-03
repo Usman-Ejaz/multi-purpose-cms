@@ -1,6 +1,8 @@
 <script setup>
-import LeftMenu from '@/Components/LeftMenu.vue';
+
 import Header from '@/Components/Header.vue';
+import LeftMenu from '@/Components/LeftMenu.vue';
+import Breadcrumbs from "@/Components/Breadcrumbs.vue";
 
 </script>
 
@@ -33,10 +35,7 @@ import Header from '@/Components/Header.vue';
                                 </h4>
                                 <!-- Breadcrumbs -->
                                 <div class="page-title-right">
-                                    <ol class="breadcrumb m-0">
-                                        <li class="breadcrumb-item"><a href="javascript: void(0);">Utility</a></li>
-                                        <li class="breadcrumb-item active">Starter Page</li>
-                                    </ol>
+                                    <Breadcrumbs />
                                 </div>
                             </div>
                         </div>

@@ -9,11 +9,13 @@ class Party extends Model
 {
     use HasFactory;
 
-    const RECEIVABLE = 'RECEIVABLE';
     const PAYABLE = 'PAYABLE';
+    const RECEIVABLE = 'RECEIVABLE';
 
-    public function scopeFilter($query, $req)
+    public function scopeFilter($query)
     {
+        $req = request();
+
         return $query;
     }
 

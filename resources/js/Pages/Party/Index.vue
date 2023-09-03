@@ -3,6 +3,13 @@ import { ref } from 'vue';
 
 import Paginator from '@/Components/Paginator.vue';
 
+defineProps({
+    parties: {
+        type: Object,
+        required: true
+    }
+})
+
 const show = ref(false);
 const isEditing = ref(false);
 
@@ -223,7 +230,7 @@ const isEditing = ref(false);
                     </div>
 
                     <!-- Paginator Component here -->
-                    <Paginator :paginator="paginator" />    
+                    <Paginator :data="parties.links" />    
                     <!--end row-->
                 </div>
             </div>

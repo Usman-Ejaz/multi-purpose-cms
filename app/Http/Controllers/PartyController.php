@@ -17,7 +17,7 @@ class PartyController extends Controller
         $parties = Party::filter($request)->select('name', 'phone_number', 'email', 'slug')->paginate(10);
         
         Inertia::share('title', 'Parties List');
-        Inertia::share('breadcrumbs', $this->getBreadcrumbs());
+        Inertia::share('breadcrumbs', breadcrumbs('parties'));
 
         return inertia('Party/Index', compact('parties'));
     }
@@ -68,10 +68,5 @@ class PartyController extends Controller
     public function destroy(Party $party)
     {
         //
-    }
-
-    private function getBreadcrumbs()
-    {
-
     }
 }
